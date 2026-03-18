@@ -1,6 +1,6 @@
 # Sugar Surfboard
 
-This is a simple monitor to display the current glucose level and trend through an ESP32 and a 2.8" TFT LCD display.
+This is a simple monitor to display the current glucose level and trend through an ESP32 and a 2.8" TFT LCD display. With an attached speaker, it will make a sequence of beeps when it expects an upcoming high or low glucose.
 
 Initially forked from project done by Pablo Medina: https://github.com/jmedina21/dexcom-esp32-monitor
 
