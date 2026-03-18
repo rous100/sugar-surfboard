@@ -1,60 +1,51 @@
-# Dexcom Monitor
+# Sugar Surfboard
 
 This is a simple monitor to display the current glucose level and trend through an ESP32 and a 2.8" TFT LCD display.
 
+Initially forked from project done by Pablo Medina: https://github.com/jmedina21/dexcom-esp32-monitor
+
+### Front
+<img src="images/front_1.jpg" width="400">
+
+### Back (speaker)
+<img src="images/back_1.jpg" width="400">
+
 ## Features
 
-![IMG_8577](https://github.com/user-attachments/assets/b6ac8dad-ef86-4e08-9859-ca909362449d)
-
--   Display the current glucose level in mg/dL and mmol/L
--   Display the change from the previous reading
--   Display the trend (up, down, flat)
--   Display the time and date
+-   Display current glucose with **BIG** numbers
+-   Display the change from the previous reading, trend, and last update time
+-   Sugar surfing notification beeps for incoming high or low glucose (catch highs and lows before they happen)
+-   Low glucose alarm beeps
 
 ## Requirements
 
--   ESP32
--   2.8" TFT LCD display
--   Jumper wires (if the microcontroller and display are separated, recommended to have it as one unit).
--   Have an account on Dexcom Share
+-   ESP32 board with 2.8" TFT LCD display
+-   Small speaker with PH2.0/1.25mm-2P connector for beep sounds 
+-   Have a Dexcom account that can share BG numbers
 
-## Configuration
+## Recommended Hardware / Software
+- [AITRIP 2 Pack ESP32 Development Board](https://www.amazon.com/dp/B0CLR7MQ91?th=1)
+- [uxcell 1W 8 Ohm DIY Magnetic Speaker 28mm 2 Pack](https://www.amazon.com/dp/B0826551ZZ)
+- Arduino IDE to build and load onto device
+- As of March 2026, can build 2 with this hardware for less than $40
 
--   Dexcom Share Username and Password
--   WiFi SSID and Password
-
--   Cable Connection (if the units are separated)
-
-| ILI9341 Pin | ESP32 Pin    | Function             |
-| ----------- | ------------ | -------------------- |
-| VCC         | 3.3V         | Power                |
-| GND         | GND          | Ground               |
-| SCK         | GPIO 23      | SPI Clock (SCK)      |
-| SDI (MOSI)  | GPIO 18      | SPI Data Out (MOSI)  |
-| CS          | GPIO 5       | Chip Select (CS)     |
-| D/C         | GPIO 2       | Data/Command (D/C)   |
-| RESET       | GPIO 4       | Reset (RST)          |
-| LED         | 3.3V (or 5V) | Backlight (optional) |
-
-## Setup
-
-1. Connect the ESP32 to the TFT LCD display
-2. Connect the ESP32 to your computer via USB
-3. Replace the `xxxx` in the code with your Dexcom Share Username and Password and WiFi SSID and Password
-4. Upload the code to the ESP32
-5. Open the Serial Monitor at 115200 baud to see the output
+## Quick Setup Using this Hardware
+- Install Arduino IDE
+- Download / clone this repository
+- Create a "mycreds.h" file in the Dexcom-Monitor folder with the following contents (replace with your wifi and dexcom info):
+```
+const char *ssid = "MY WIFI SSID";     // Replace with your Wi-Fi SSID
+const char *password = "MY WIFI PASSWORD"; // Replace with your Wi-Fi password
+const char *dexcomUsername = "my_dexcom_username";	// Replace with dexcom account username
+const char *dexcomPassword = "MY DEXCOM PASSWORD"; // Replace with dexcom account password
+```
+- Load Dexcom-Monitor.ino in the Arduino IDE
+- Connect your board to your computer, and upload the program with Arduino IDE
+- Open the Serial Monitor at 115200 baud to see log output
 
 ## Notes
 
--   The code is designed to run on an ESP32 microcontroller
--   The code is designed to display on an 2.8" TFT LCD display
--   If you experience any issues or have suggestions, please open an issue or submit a pull request or contact me at jpmedina21@gmail.com
-
-## Changelog
-
--   March 12, 2025
-    -   Improve glucose difference calculation
-    -   Change diagonal trend arrow to since it the graphics library couldn't render the original one
-    -   Added wifi reconnection logic
-    -   Added session token request when it is expired
-    -   Minor style fixes
+- This code should work on other ESP32 microcontrollers and with other 2.8" TFT LCD displays but I have no tested them
+- Big thank you to Pablo Medina. This project is a fork of his [Dexcom Monitor](https://github.com/jmedina21/dexcom-esp32-monitor) project
+- Big thank you to Stephen W. Ponder and Kevin L. McMahon whose excellent book [Sugar Surfing](https://www.amazon.com/Sugar-Surfing-Manage-Diabetes-Modern/dp/0996253904) was the inspiration for this project 
+<img src="images/sugar_surfing_book_cover.jpg" width="400">
