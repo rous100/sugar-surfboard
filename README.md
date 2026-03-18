@@ -45,7 +45,7 @@ const char *dexcomPassword = "MY DEXCOM PASSWORD"; // Replace with dexcom accoun
 
 ## Notes
 
-- This code should work on other ESP32 microcontrollers and with other 2.8" TFT LCD displays but I have no tested them
+- This code should work on other ESP32 microcontrollers and with other 2.8" TFT LCD displays but I have not tested them
 - Big thank you to Pablo Medina. This project is a fork of his [Dexcom Monitor](https://github.com/jmedina21/dexcom-esp32-monitor) project
 - Big thank you to Stephen W. Ponder and Kevin L. McMahon whose excellent book [Sugar Surfing](https://www.amazon.com/Sugar-Surfing-Manage-Diabetes-Modern/dp/0996253904) was the inspiration for this project 
 <img src="images/sugar_surfing_book_cover.jpg" width="400">
