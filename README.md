@@ -50,7 +50,7 @@ const char *dexcomPassword = "MY DEXCOM PASSWORD"; // Replace with dexcom accoun
   - Adafruit GFX Library
   - Adafruit ILI9341
 - Hit the upload button to load the program onto the device
-- Open the Serial Monitor at 115200 baud to see log output
+- Open the Serial Monitor at 115200 baud if you want to see log output
 
 
 ## Usage
