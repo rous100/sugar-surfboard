@@ -30,6 +30,7 @@ Initially forked from project done by Pablo Medina: https://github.com/jmedina21
 - As of March 2026, can build 2 with this hardware for less than $40
 
 ## Quick Setup Using this Hardware
+- If you want beep alerts, plug the speaker into the board as shown in the picture above
 - Install Arduino IDE and any drivers it prompts you to install when loading it
 - Download / clone this repository
 - Create a "mycreds.h" file in the Dexcom-Monitor folder with the following contents (replace with your wifi and dexcom info):
@@ -39,7 +40,8 @@ const char *password = "MY WIFI PASSWORD"; // Replace with your Wi-Fi password
 const char *dexcomUsername = "my_dexcom_username";	// Replace with dexcom account username
 const char *dexcomPassword = "MY DEXCOM PASSWORD"; // Replace with dexcom account password
 ```
-- Load Dexcom-Monitor.ino in the Arduino IDE and connect your device via USB (ignore anything that loads on the device screen when it powers on, we're about to overwrite whatever is already on there)
+- Load Dexcom-Monitor.ino in the Arduino IDE
+- Connect your board via USB (ignore anything that loads on the device screen when it powers on, we're about to overwrite whatever is already on there)
 - In the Arduino IDE, use the Boards Manager to install the "Arduino ESP32 Boards" package
 - At the top of the screen, select "ESP32 Dev Module" for the connected board
 - In the "Sketch" menu, select "Include Library" and install these libraries
