@@ -1,6 +1,6 @@
 # Sugar Surfboard
 
-This is a simple monitor to display the current glucose level and trend through an ESP32 and a 2.8" TFT LCD display. With an attached speaker, it will make a sequence of beeps when it expects an upcoming high or low glucose.
+This is a simple monitor to display the current glucose level and trend through an ESP32 on Wifi and a 2.8" TFT LCD display. With an attached speaker, it will make a sequence of beeps when it expects an upcoming high or low glucose.
 
 Initially forked from project done by Pablo Medina: https://github.com/jmedina21/dexcom-esp32-monitor
 
@@ -10,24 +10,26 @@ Initially forked from project done by Pablo Medina: https://github.com/jmedina21
 ### Back (speaker)
 <img src="images/back_1.jpg" width="400">
 
-## Features
 
+## Features
 -   Display current glucose with **BIG** numbers
 -   Display the change from the previous reading, trend, and last update time
 -   Sugar surfing notification beeps for incoming high or low glucose (catch highs and lows before they happen)
 -   Low glucose alarm beeps
 
-## Requirements
 
+## Requirements
 -   ESP32 board with 2.8" TFT LCD display
 -   Small speaker with PH2.0/1.25mm-2P connector for beep sounds 
 -   Have a Dexcom account that can share BG numbers
+
 
 ## Recommended Hardware / Software
 - [AITRIP 2 Pack ESP32 Development Board](https://www.amazon.com/dp/B0CLR7MQ91?th=1)
 - [uxcell 1W 8 Ohm DIY Magnetic Speaker 28mm 2 Pack](https://www.amazon.com/dp/B0826551ZZ)
 - Arduino IDE to build and load onto device
 - As of March 2026, can build 2 with this hardware for less than $40
+
 
 ## Quick Setup Using this Hardware
 - If you want beep alerts, plug the speaker into the board as shown in the picture above
@@ -49,10 +51,15 @@ const char *dexcomPassword = "MY DEXCOM PASSWORD"; // Replace with dexcom accoun
   - Adafruit ILI9341
 - Hit the upload button to load the program onto the device
 - Open the Serial Monitor at 115200 baud to see log output
-- Once Sugar Surfboard is loaded onto the device, you can safely unplug it from your computer and plug it in anywhere. It will automatically turn on and Sugar Surfboard will load
+
+
+## Usage
+- Once Sugar Surfboard is loaded onto the device, you can safely unplug it from your computer and plug it in anywhere that has access to the configured Wifi network. It will automatically turn on and Sugar Surfboard will load and start getting numbers from Dexcom
+- Tap the top left corner of the screen to flip the orientation
+- Tap the middle of the screen to adjust brightness
+
 
 ## Notes
-
 - This code should work on other ESP32 microcontrollers and with other 2.8" TFT LCD displays but I have not tested them
 - Big thank you to Pablo Medina. This project is a fork of his [Dexcom Monitor](https://github.com/jmedina21/dexcom-esp32-monitor) project
 - Big thank you to Stephen W. Ponder and Kevin L. McMahon whose excellent book [Sugar Surfing](https://www.amazon.com/Sugar-Surfing-Manage-Diabetes-Modern/dp/0996253904) was the inspiration for this project 
